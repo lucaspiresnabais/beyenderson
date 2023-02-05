@@ -1,12 +1,12 @@
 http://localhost:3000/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhvbGEiLCJwYXNzd29yZCI6IiQyYiQxMCRGU1dsVFBMb090bVZlUXlvNy5na01PYnJVVnlZU0hYclh1NnFUVEQvbEVnVEVYVVVkWkJqaSIsImlhdCI6MTY3NTU3MDE0NiwiZXhwIjoxNjc1NTcwMTU2fQ._uKtbJlBs6Dgms6xerpRJwaEbjvxQbBzw8SlWBi8ZCE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwicGFzc3dvcmQiOiIkMmIkMTAkaWswUGFwLy43WDBDbS9kVnoxTjU2ZVQzL1RkOEhDazNlRVFObHFzYy9MUnZFS2g0aG1iNkciLCJpYXQiOjE2NzU1NzExMDAsImV4cCI6MTY3NTU3MTEyMH0.OQAnrNX_aWliSObtejupCAtcGz8KwouTix3cJ-UUwPo
 ###
 
 POST http://localhost:3000/users/signup
 Content-Type: application/json
 
 {
-    "username": "hola",
+    "username": "lucas",
     "password": "donna"
 }
 
@@ -16,8 +16,24 @@ GET http://localhost:3000/users/login
 Content-Type: application/json
 
 {
-    "username": "hola",
+    "username": "lucas",
     "password": "donna"
 }
 
 ###
+
+POST http://localhost:3000/users/token
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwicGFzc3dvcmQiOiIkMmIkMTAkY0Q2SzZid2N6ZWNVcEk3cmtmQUQvLno2eEx2c1E5bGNLMWhMWFZKYVJXSmQ0WnpDcE9kSC4iLCJpYXQiOjE2NzU1NzEzMDh9.Tcvf4V6r8Ew7fEUY6mbrKJxXMoqqWzFi0AapJ5wAUxg"
+}
+
+###
+
+DELETE http://localhost:3000/users/logout
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwicGFzc3dvcmQiOiIkMmIkMTAkY0Q2SzZid2N6ZWNVcEk3cmtmQUQvLno2eEx2c1E5bGNLMWhMWFZKYVJXSmQ0WnpDcE9kSC4iLCJpYXQiOjE2NzU1NzEyODV9.9n7Jro4M7HXk6XcSa5MS_Z8IJ26Hn7xOpTxPRGh_TpM"
+}
