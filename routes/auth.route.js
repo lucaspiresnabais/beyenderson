@@ -9,6 +9,6 @@ authRouter.get("/users/login", authController.login);
 authRouter.post("/users/token", authController.token);
 authRouter.delete("/users/logout", authController.logout);
 
-authRouter.get("/users", authenticateToken, authController.users);
+authRouter.get("/users", authController.users);
 
 export default authRouter;

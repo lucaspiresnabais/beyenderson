@@ -1,5 +1,5 @@
 http://localhost:3000/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwicGFzc3dvcmQiOiIkMmIkMTAkaWswUGFwLy43WDBDbS9kVnoxTjU2ZVQzL1RkOEhDazNlRVFObHFzYy9MUnZFS2g0aG1iNkciLCJpYXQiOjE2NzU1NzExMDAsImV4cCI6MTY3NTU3MTEyMH0.OQAnrNX_aWliSObtejupCAtcGz8KwouTix3cJ-UUwPo
+
 ###
 
 POST http://localhost:3000/users/signup
