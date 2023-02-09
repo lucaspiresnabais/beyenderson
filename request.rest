@@ -37,3 +37,24 @@ Content-Type: application/json
 {
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwicGFzc3dvcmQiOiIkMmIkMTAkY0Q2SzZid2N6ZWNVcEk3cmtmQUQvLno2eEx2c1E5bGNLMWhMWFZKYVJXSmQ0WnpDcE9kSC4iLCJpYXQiOjE2NzU1NzEyODV9.9n7Jro4M7HXk6XcSa5MS_Z8IJ26Hn7xOpTxPRGh_TpM"
 }
+
+###
+
+POST http://localhost:3000/venues/create
+Content-Type: application/json
+
+{
+    "name": "First Venue",
+    "description": "Party"
+}
+
+###
+
+PATCH http://localhost:3000/venues/edit
+Content-Type: application/json
+
+{
+    "name": "First Venue",
+    "description": "Party 2",
+    "isPublic": false
+}
