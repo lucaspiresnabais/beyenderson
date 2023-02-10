@@ -62,6 +62,41 @@ const controller = {
     if (!venue) return res.status(404).send("Venue not found");
     res.status(200).send(venue);
   },
+  addHost: async (req, res) => {
+    const id = req.params.id;
+    const hostsToAdd = req.body.hosts;
+    const venue = await Venue.findOne({ _id: id });
+    let updatedHosts = venue.hosts;
+    for (const hostId of hostsToAdd) {
+      if (!updatedHosts.includes(hostId)) {
+        updatedHosts.push(hostId);
+        await Host.updateOne({ _id: hostId }, { $push: { venues: id } });
+      }
+    }
+    await Venue.updateOne({ _id: id }, { hosts: updatedHosts });
+    res.sendStatus(200);
+  },
+  removeHost: async (req, res) => {
+    const id = req.params.id;
+
+    const hostsToRemove = req.body.hosts;
+
+    const venue = await Venue.findOne({ _id: id });
+
+    const updatedHosts = venue.hosts.filter((originalHost) => {
+      return hostsToRemove.some((removeCandidate) => {
+        return originalHost.toString() !== removeCandidate;
+      });
+    });
+
+    for (const hostId of hostsToRemove) {
+      await Host.updateOne({ _id: hostId }, { $pull: { venues: id } });
+    }
+
+    await Venue.updateOne({ _id: id }, { hosts: updatedHosts });
+
+    res.sendStatus(200);
+  },
 };
 
 export default controller;

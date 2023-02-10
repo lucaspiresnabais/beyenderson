@@ -71,3 +71,22 @@ DELETE http://localhost:3000/venues/63e5a9c3b00dfcef832fbe20
 ###
 
 GET http://localhost:3000/venues/63e3c0445683b5a4924d8880
+
+
+###
+
+PATCH http://localhost:3000/venues/addHost/63e5a754ec232ee52572afd5
+Content-Type: application/json
+
+{
+    "hosts": ["63e5963e5971a34a76dd971c"] 
+}
+
+###
+
+PATCH http://localhost:3000/venues/removeHost/63e5a754ec232ee52572afd5
+Content-Type: application/json
+
+{
+    "hosts": ["63e5963e5971a34a76dd971c"] 
+}
