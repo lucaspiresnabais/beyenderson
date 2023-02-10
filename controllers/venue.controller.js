@@ -62,7 +62,7 @@ const controller = {
     if (!venue) return res.status(404).send("Venue not found");
     res.status(200).send(venue);
   },
-  addHost: async (req, res) => {
+  addHosts: async (req, res) => {
     const id = req.params.id;
     const hostsToAdd = req.body.hosts;
     const venue = await Venue.findOne({ _id: id });
@@ -76,7 +76,7 @@ const controller = {
     await Venue.updateOne({ _id: id }, { hosts: updatedHosts });
     res.sendStatus(200);
   },
-  removeHost: async (req, res) => {
+  removeHosts: async (req, res) => {
     const id = req.params.id;
 
     const hostsToRemove = req.body.hosts;
