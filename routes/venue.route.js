@@ -5,9 +5,8 @@ import { authenticateToken } from "../utils/auth.util.js";
 const venueRouter = express.Router();
 
 venueRouter.post("/venues/create", venueController.create);
-venueRouter.patch("/venues/edit", venueController.edit);
-/* authRouter.get("/venues");
-authRouter.get("/venues/:id");
-authRouter.delete("/venues/:id", authController.logout);  */
+venueRouter.patch("/venues/:id", venueController.edit);
+venueRouter.delete("/venues/:id", venueController.delete);
+venueRouter.get("/venues/:id", venueController.venueById);
 
 export default venueRouter;

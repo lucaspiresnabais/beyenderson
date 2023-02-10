@@ -53,8 +53,5 @@ const controller = {
     refreshTokens = refreshTokens.filter((token) => token !== req.body.token);
     res.sendStatus(204);
   },
-  users: async (req, res) => {
-    const user = await User.findById("63e135d092ef710459186729");
-  },
 };
 export default controller;

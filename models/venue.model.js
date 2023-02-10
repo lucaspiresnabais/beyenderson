@@ -10,7 +10,7 @@ const VenueModelSchema = new mongoose.Schema(
     country: String,
     isPublic: Boolean,
     showWhoIsComing: Boolean,
-    hosts: { type: [mongoose.Schema.Types.ObjectId], ref: "User" },
+    hosts: { type: [mongoose.Schema.Types.ObjectId], ref: "Host" },
   },
   { timestamps: true }
 );

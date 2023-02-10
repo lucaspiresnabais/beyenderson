@@ -45,16 +45,29 @@ Content-Type: application/json
 
 {
     "name": "First Venue",
-    "description": "Party"
+    "hosts": ["63e59d905971a34a76dd9721", "63e59d625971a34a76dd9720", "63e5963e5971a34a76dd971c"]
 }
 
 ###
 
-PATCH http://localhost:3000/venues/edit
+PATCH http://localhost:3000/venues/63e3c0445683b5a4924d8880
 Content-Type: application/json
 
 {
     "name": "First Venue",
-    "description": "Party 2",
-    "isPublic": false
+    "description": "Party 3",
+    "isPublic": true
 }
+
+###
+
+GET http://localhost:3000/hosts/63e296566e0fcb0d849b6d1d
+Content-Type: application/json
+
+###
+
+DELETE http://localhost:3000/venues/63e5a9c3b00dfcef832fbe20
+
+###
+
+GET http://localhost:3000/venues/63e3c0445683b5a4924d8880
